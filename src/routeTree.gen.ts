@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChatRouteImport } from './routes/chat'
+import { Route as CounsellingRouteImport } from './routes/counselling'
+import { Route as CounsellingFormRouteImport } from './routes/counselling-form'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as VideoRouteImport } from './routes/video'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CounsellingRoute = CounsellingRouteImport.update({
+  id: '/counselling',
+  path: '/counselling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CounsellingFormRoute = CounsellingFormRouteImport.update({
+  id: '/counselling-form',
+  path: '/counselling-form',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoRoute = VideoRouteImport.update({
+  id: '/video',
+  path: '/video',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/counselling': typeof CounsellingRoute
+  '/counselling-form': typeof CounsellingFormRoute
+  '/dashboard': typeof DashboardRoute
+  '/login': typeof LoginRoute
+  '/quiz': typeof QuizRoute
+  '/resources': typeof ResourcesRoute
+  '/video': typeof VideoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/counselling': typeof CounsellingRoute
+  '/counselling-form': typeof CounsellingFormRoute
+  '/dashboard': typeof DashboardRoute
+  '/login': typeof LoginRoute
+  '/quiz': typeof QuizRoute
+  '/resources': typeof ResourcesRoute
+  '/video': typeof VideoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/counselling': typeof CounsellingRoute
+  '/counselling-form': typeof CounsellingFormRoute
+  '/dashboard': typeof DashboardRoute
+  '/login': typeof LoginRoute
+  '/quiz': typeof QuizRoute
+  '/resources': typeof ResourcesRoute
+  '/video': typeof VideoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/chat'
+    | '/counselling'
+    | '/counselling-form'
+    | '/dashboard'
+    | '/login'
+    | '/quiz'
+    | '/resources'
+    | '/video'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/chat'
+    | '/counselling'
+    | '/counselling-form'
+    | '/dashboard'
+    | '/login'
+    | '/quiz'
+    | '/resources'
+    | '/video'
+  id:
+    | '__root__'
+    | '/'
+    | '/chat'
+    | '/counselling'
+    | '/counselling-form'
+    | '/dashboard'
+    | '/login'
+    | '/quiz'
+    | '/resources'
+    | '/video'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChatRoute: typeof ChatRoute
+  CounsellingRoute: typeof CounsellingRoute
+  CounsellingFormRoute: typeof CounsellingFormRoute
+  DashboardRoute: typeof DashboardRoute
+  LoginRoute: typeof LoginRoute
+  QuizRoute: typeof QuizRoute
+  ResourcesRoute: typeof ResourcesRoute
+  VideoRoute: typeof VideoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/counselling': {
+      id: '/counselling'
+      path: '/counselling'
+      fullPath: '/counselling'
+      preLoaderRoute: typeof CounsellingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/counselling-form': {
+      id: '/counselling-form'
+      path: '/counselling-form'
+      fullPath: '/counselling-form'
+      preLoaderRoute: typeof CounsellingFormRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video': {
+      id: '/video'
+      path: '/video'
+      fullPath: '/video'
+      preLoaderRoute: typeof VideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChatRoute: ChatRoute,
+  CounsellingRoute: CounsellingRoute,
+  CounsellingFormRoute: CounsellingFormRoute,
+  DashboardRoute: DashboardRoute,
+  LoginRoute: LoginRoute,
+  QuizRoute: QuizRoute,
+  ResourcesRoute: ResourcesRoute,
+  VideoRoute: VideoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
